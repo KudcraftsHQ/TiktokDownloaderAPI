@@ -411,8 +411,8 @@ class TikTokDownloader:
         await self.check_settings(
             False,
         )
-        if await self.disclaimer():
-            await self.main_menu(safe_pop(self.run_command))
+        # Skip disclaimer and main menu, directly start Web API server
+        await self.server()
 
     def periodic_update_params(self):
         async def inner():
