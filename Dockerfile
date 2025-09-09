@@ -43,5 +43,11 @@ EXPOSE 5555
 # 创建挂载点
 VOLUME /app/Volume
 
-# 设置容器启动命令
+# 设置环境变量以启用自动模式并跳过所有提示
+ENV AUTO_MODE=1
+ENV LANGUAGE=en_US
+ENV DISCLAIMER_ACCEPTED=1
+ENV DEFAULT_MODE=7
+
+# 设置容器启动命令 - 自动启动，无需用户交互
 CMD ["python", "main.py"]
